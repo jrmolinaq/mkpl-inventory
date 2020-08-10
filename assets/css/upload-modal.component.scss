@@ -1,0 +1,62 @@
+@import './variables/colors';
+@import './variables/sizes';
+
+.button-width {
+  width: 185px;
+}
+
+.modal-choose-option {
+  display: grid;
+  grid-template: 1fr / 55% 45%;
+  height: 430px;
+  width: 847px;
+}
+
+.modal-info {
+  background-color: $alabaster;
+  padding: 0 31px 0 56px;
+}
+
+.modal-text {
+  line-height: 25px;
+}
+
+.modal-options-container {
+  display: grid;
+  grid-template: 10% 80% 10% / 1fr;
+}
+
+.modal-icon {
+  align-self: flex-start;
+  height: 80px;
+}
+
+%base-line-elements {
+  background-color: $mercury;
+  content: '';
+  height: 1px;
+  position: absolute;
+  top: 7px;
+  width: 73px;
+}
+
+.or-element {
+  position: relative;
+
+  &::after {
+    @extend %base-line-elements;
+
+    right: 20px;
+  }
+
+  &::before {
+    @extend %base-line-elements;
+
+    left: 20px;
+  }
+}
+
+.unitary-modal-load {
+  padding: 36px;
+  width: 560px;
+}

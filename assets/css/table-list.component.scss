@@ -1,0 +1,24 @@
+%table-grid-display {
+  min-height: 50px;
+}
+
+.table-header {
+  @extend %table-grid-display;
+
+  width: 100%;
+}
+
+.header-title {
+  align-self: center;
+  padding: 0 10px 0 14px;
+}
+
+.product-info {
+  @extend %table-grid-display;
+
+  align-items: center;
+}
+
+.table-item {
+  padding: 0 10px 0 14px;
+}

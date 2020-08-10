@@ -1,0 +1,89 @@
+@import './variables/colors';
+
+.input-container {
+  position: relative;
+}
+
+.input {
+  background: none;
+  border: 1px solid rgba($black, 0.32);
+  border-radius: 4px;
+  color: $cod-gray;
+  font-size: 16px;
+  letter-spacing: 0.15px;
+  line-height: 24px;
+  margin-bottom: 5px;
+  padding: 16px;
+  transition: all 330ms ease;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.valid ~ .label {
+    color: $cod-gray;
+    font-size: 12px;
+    top: -12px;
+  }
+
+  &:focus ~ .label {
+    color: $deep-sea-green;
+    font-size: 12px;
+    top: -12px;
+  }
+
+  &:focus {
+    border: 2px solid $deep-sea-green;
+  }
+
+  &.error {
+    border-color: $mandy;
+
+    & ~ .label {
+      color: $mandy;
+      font-size: 12px;
+      top: -12px;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    border-color: rgba($black, 0.32);
+    color: rgba($black, 0.32);
+    cursor: not-allowed;
+
+    & ~ .label {
+      color: rgba($black, 0.32);
+    }
+  }
+}
+
+.label {
+  background-color: $white;
+  color: $dusty-gray;
+  font-size: 16px;
+  left: 8px;
+  letter-spacing: 0.15px;
+  line-height: 24px;
+  padding: 0 8px;
+  pointer-events: none;
+  position: absolute;
+  top: 16px;
+  transition: all 330ms ease;
+}
+
+.error-message {
+  color: $mandy;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  line-height: 16px;
+}
+
+.medium-input {
+  width: 300px;
+}
+
+.big-input {
+  width: 600px;
+}

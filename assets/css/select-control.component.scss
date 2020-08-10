@@ -1,0 +1,86 @@
+@import './variables/colors';
+@import './variables/sizes';
+
+.input-container {
+  position: relative;
+}
+
+.input {
+  border: 1px solid rgba($black, 0.32);
+  background: $white url(/o/prueba-mkpl/icons/down-arrow.svg) 98% / 0 no-repeat;
+  border-radius: 4px;
+  color: $cod-gray;
+  font-size: 16px;
+  letter-spacing: 0.15px;
+  line-height: 24px;
+  margin-bottom: 5px;
+  padding: 16px;
+  transition: all $transition-duration $transition-function;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus ~ .label {
+    color: $deep-sea-green;
+    font-size: 12px;
+    top: -12px;
+  }
+
+  &:hover {
+    background-size: 20px;
+  }
+
+  &:focus {
+    background-size: 20px;
+    border: 2px solid $deep-sea-green;
+  }
+
+  &.valid ~ .label {
+    color: $cod-gray;
+    font-size: 12px;
+    top: -12px;
+  }
+
+  &.error {
+    border-color: $mandy;
+
+    & ~ .label {
+      color: $mandy;
+      font-size: 12px;
+      top: -12px;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    border-color: rgba($black, 0.32);
+    color: rgba($black, 0.32);
+
+    & ~ .label {
+      color: rgba($black, 0.32);
+    }
+  }
+}
+
+.label {
+  background-color: $white;
+  color: $dusty-gray;
+  font-size: 16px;
+  left: 8px;
+  letter-spacing: 0.15px;
+  line-height: 24px;
+  padding: 0 8px;
+  pointer-events: none;
+  position: absolute;
+  top: 16px;
+  transition: all 330ms ease;
+}
+
+.error-message {
+  color: $mandy;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  line-height: 16px;
+}

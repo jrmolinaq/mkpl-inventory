@@ -1,0 +1,98 @@
+<modal class="xxx" id="cv-modal" [ngSwitch]="currentModalStep" (closeModal)="closeProductUpload()" [applyPadding]="false">
+  <div *ngSwitchDefault class="row center modal-choose-option">
+    <div class="modal-info row middle center">
+      <div class="column middle">
+        <img class="modal-icon column" src="/o/mkpl-inventory/icons/upload-inventory.svg" alt="Cargar inventario" />
+        <h2 class="title section m-top-8">Agregar o editar productos</h2>
+        <p class="field-text m-top-3 modal-text">
+          Puedes agregar o editar productos de tu inventario o realizar una
+          carga masiva cargando un archivo en formato .xls o .xlsx (Excel).
+        </p>
+      </div>
+    </div>
+    <div class="modal-options-container">
+      <div></div>
+      <div class="column center middle">
+        <button class="button-primary button-width m-bottom-12" (click)="changeModal('1')" type="button">
+          Carga masiva
+        </button>
+        <span class="m-bottom-8 or-element">ó</span>
+        <button type="button" class="button-secondary button-width" (click)="changeModal(steps.UNIT_LOAD)">
+          Carga individual
+        </button>
+      </div>
+      <button type="button" class="link" (click)="closeModal('cv-modal')">
+        Cancelar
+      </button>
+    </div>
+  </div>
+
+  <modal-inventory *ngSwitchCase="steps.SELECT_FILE">
+    <h2 class="title section m-top-4">Cargar archivo</h2>
+    <p class="field-text text-center m-top-5">
+      Cargar tu archivo .xls o .xlsx. Recuerda que el peso máximo es de 40MB
+    </p>
+    <input-file label="Subir archivo" (fileSelected)="upload($event)"></input-file>
+  </modal-inventory>
+
+  <modal-inventory *ngSwitchCase="steps.LOADING">
+    <h2 class="title section m-top-4">Cargando archivo</h2>
+    <modal-info-block [info]="file.name + '... '" bold=" está cargando" icon="loading"></modal-info-block>
+  </modal-inventory>
+
+  <modal-inventory *ngSwitchCase="steps.SUCCESS">
+    <h2 class="title section m-top-4">¡Felicitaciones!</h2>
+    <modal-info-block bold="Tu archivo ha sido cargado con éxito"  icon="success-subsidiary"></modal-info-block>
+    <p class="field-text text-center m-top-3">
+      En caso de presentarse alguna inconsistenia te enviaremos un correo electrónico
+    </p>
+    <button type="button" class="button-primary button-width m-top-7" (click)="closeModal('cv-modal', true)">
+      Ir al inventario
+    </button>
+  </modal-inventory>
+
+  <modal-inventory *ngSwitchCase="steps.SUCCESS_INDIVIDUAL">
+    <h2 class="title section m-top-4">Producto cargado</h2>
+    <p class="field-text text-center m-top-5">
+      El producto fue cargado con éxito. En caso de no estar en la lista de productos, revisa tu bandeja de correo.
+    </p>
+    <button type="button" class="button-primary button-width m-top-7" (click)="closeModal('cv-modal', true)">
+      Ir al inventario
+    </button>
+  </modal-inventory>
+
+  <modal-inventory *ngSwitchCase="steps.ERROR" [error]="modalError">
+    <h2 class="title section m-top-4">Error en la carga</h2>
+    <modal-info-block [error]="modalError" icon="red-wrong"></modal-info-block>
+    <button type="button" class="button-primary button-width m-top-7" (click)="changeModal()">
+      Intentarlo de nuevo
+    </button>
+  </modal-inventory>
+
+  <form [formGroup]="form" *ngSwitchCase="steps.UNIT_LOAD" (ngSubmit)="uploadProduct()">
+    <div class="column unitary-modal-load" formGroupName="productInfo">
+      <span class="title-medium self-center bold deep-sea-green m-bottom-4">Carga de inventario individual</span>
+      <span class="text-big deep-sea-green self-center m-bottom-12">Ingresa los datos solicitados a continuación</span>
+      <app-input-control formControlName="reference" label="Referencia" id="reference" class="m-bottom-5">
+      </app-input-control>
+      <app-input-control formControlName="name" label="Nombre del repuesto" id="name" class="m-bottom-5">
+      </app-input-control>
+      <app-input-control formControlName="unitPrice" label="Precio unitario ($)" id="unitPrice" class="m-bottom-5">
+      </app-input-control>
+      <app-input-control formControlName="quantity" label="Cantidad" id="quantity" class="m-bottom-5">
+      </app-input-control>
+      <app-select-control [data]="qualityTypes" formControlName="quality" label="Calidad" id="quality"
+        class="m-bottom-5">
+      </app-select-control>
+      <div class="row width-100 end">
+        <button type="button" class="button-secondary button-width m-right-4" (click)="closeProductUpload()">
+          Cancelar
+        </button>
+        <button [disabled]="form.invalid" type="submit" class="button-primary button-width">
+          Cargar producto
+        </button>
+      </div>
+    </div>
+  </form>
+
+</modal>

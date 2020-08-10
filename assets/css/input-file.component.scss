@@ -1,0 +1,20 @@
+@import './variables/colors';
+
+.upload-btn-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+}
+
+.upload-input-wrapper {
+  display: none;
+
+  &:hover ~ label {
+    background-color: $chathams-blue;
+    cursor: pointer;
+  }
+}
+
+.button-width {
+  width: 185px;
+}

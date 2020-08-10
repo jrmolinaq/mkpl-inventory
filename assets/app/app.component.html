@@ -1,3 +1,13 @@
-<div>
-	Prueba
+<div *ngIf="paginator">
+	
+	<empty-inventory *ngIf="!paginator.length; else list"></empty-inventory>
+	
+	<ng-template #list>
+	  <h1 class="inventory-title poppins deep-sea-green bold text-normal m-bottom-10">Inventario</h1>
+	  
+	  <product-list [subsidiaryId]="subsidiaryId" [paginator]="paginator"></product-list>
+
+	</ng-template>
 </div>
+  
+ <upload-modal (uploaded)="onUpload()"></upload-modal>

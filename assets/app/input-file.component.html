@@ -1,0 +1,15 @@
+<div class="upload-btn-wrapper m-top-9">
+    <input
+      class="upload-input-wrapper"
+      type="file"
+      [accept]="accept"
+      (change)="upload($event)"
+      [id]="label"
+    />
+    <label
+      class="button-primary button-width"
+      [for]="label"
+    >
+      {{label}}
+    </label>
+</div>

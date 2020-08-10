@@ -1,0 +1,33 @@
+$max-container-width: 1135px;
+$max-container-width-desktop-bg: 1135px;
+
+$sidebar-width: 120px;
+$toolbar-height: 115px;
+$footer-height: 55px;
+
+$router-padding: 10px 60px;
+$max-router-height: 768px + $router-padding - $toolbar-height - $footer-height;
+
+$desktop-break: 1367px;
+$tablet-break: 1024px;
+$mobile-break: 768px;
+
+// Transitions
+$transition-duration: 290ms;
+$transition-function: cubic-bezier(0.79, 0.01, 0.38, 0.99);
+
+:root {
+  --max-container-width: #{$max-container-width};
+}
+
+@mixin max-width-container($margin-top: 0, $margin-bottom: 0) {
+  margin: $margin-top auto $margin-bottom;
+  max-width: var(--max-container-width);
+  width: 100%;
+}
+
+@media screen and (min-width: $desktop-break) {
+  :root {
+    --max-container-width: #{$max-container-width-desktop-bg};
+  }
+}

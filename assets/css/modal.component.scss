@@ -1,0 +1,71 @@
+@import './variables/colors';
+
+:host {
+  display: none;
+
+  .modal-container {
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    z-index: 1000;
+
+    &::before {
+      background-color: rgba(0, 0, 0, 0.5);
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 900;
+    }
+
+    &::after {
+      background-color: $silver;
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: 0.2;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 950;
+    }
+
+    .modal-body {
+      background: $white;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1100;
+    }
+  }
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.button-close-modal {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.icon-modal {
+  font-size: 36px;
+}
+
+.padding-modal {
+  padding: 20px;
+}
+
+.close-modal {
+  height: 14px;
+  width: 14px;
+}

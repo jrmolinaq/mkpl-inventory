@@ -1,0 +1,14 @@
+@import './variables/colors';
+@import './variables/sizes';
+
+.button-width {
+  width: 185px;
+}
+
+.empty-inventory-container {
+  height: $max-router-height;
+}
+
+.empty-inventory {
+  width: 697px;
+}

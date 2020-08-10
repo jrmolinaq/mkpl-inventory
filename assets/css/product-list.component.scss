@@ -1,0 +1,19 @@
+@import './variables/colors';
+@import './variables/sizes';
+
+.main-table {
+  background-color: $alabaster;
+}
+
+.table-container {
+  background-color: $white;
+  border: 2px solid $white-lilac;
+  border-radius: 8px;
+  height: 100%;
+  width: 100%;
+}
+
+.inventory-subtitle {
+  color: $tiber;
+  font-size: 24px;
+}
