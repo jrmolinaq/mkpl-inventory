@@ -1,14 +1,12 @@
-@import './variables/colors';
-
 .modal-step {
   display: grid;
-  grid-template: 50% 50% / 1fr;
+  grid-template: 50% 50%/1fr;
   height: 453px;
   width: 559px;
 }
 
 .modal-logo-container {
-  background-color: $alabaster;
+  background-color: #F8F8F8;
 }
 
 .info-container {

@@ -1,5 +1,5 @@
-<div class="input-container column" [ngClass]="classContainer">
-  <select class="input" [id]="id" [name]="id" [(ngModel)]="value" [disabled]="disabled"
+<div class="input-select-container column" [ngClass]="classContainer">
+  <select class="input-select" [id]="id" [name]="id" [(ngModel)]="value" [disabled]="disabled"
     (ngModelChange)="onChange()" (blur)="markAsTouched()"
     [ngClass]="{ error: control.invalid && control.touched, valid: control.valid || disabled }">
     <option *ngFor="let item of data" [value]="item.id">{{item.name}}</option>

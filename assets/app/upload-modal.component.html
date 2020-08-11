@@ -1,4 +1,4 @@
-<modal class="xxx" id="cv-modal" [ngSwitch]="currentModalStep" (closeModal)="closeProductUpload()" [applyPadding]="false">
+<modal class="modal-hidden" id="cv-modal" [ngSwitch]="currentModalStep" (closeModal)="closeProductUpload()" [applyPadding]="false">
   <div *ngSwitchDefault class="row center modal-choose-option">
     <div class="modal-info row middle center">
       <div class="column middle">
@@ -30,7 +30,7 @@
   <modal-inventory *ngSwitchCase="steps.SELECT_FILE">
     <h2 class="title section m-top-4">Cargar archivo</h2>
     <p class="field-text text-center m-top-5">
-      Cargar tu archivo .xls o .xlsx. Recuerda que el peso máximo es de 40MB
+      Cargar tu archivo .xls o .xlsx. Recuerda que el peso máximo es de 6 MB
     </p>
     <input-file label="Subir archivo" (fileSelected)="upload($event)"></input-file>
   </modal-inventory>

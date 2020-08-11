@@ -1,19 +1,16 @@
-@import './variables/colors';
-@import './variables/sizes';
-
 .button-width {
   width: 185px;
 }
 
 .modal-choose-option {
   display: grid;
-  grid-template: 1fr / 55% 45%;
+  grid-template: 1fr/55% 45%;
   height: 430px;
   width: 847px;
 }
 
 .modal-info {
-  background-color: $alabaster;
+  background-color: #F8F8F8;
   padding: 0 31px 0 56px;
 }
 
@@ -23,7 +20,7 @@
 
 .modal-options-container {
   display: grid;
-  grid-template: 10% 80% 10% / 1fr;
+  grid-template: 10% 80% 10%/1fr;
 }
 
 .modal-icon {
@@ -31,9 +28,9 @@
   height: 80px;
 }
 
-%base-line-elements {
-  background-color: $mercury;
-  content: '';
+.or-element::before, .or-element::after {
+  background-color: #E5E5E5;
+  content: "";
   height: 1px;
   position: absolute;
   top: 7px;
@@ -42,18 +39,12 @@
 
 .or-element {
   position: relative;
-
-  &::after {
-    @extend %base-line-elements;
-
-    right: 20px;
-  }
-
-  &::before {
-    @extend %base-line-elements;
-
-    left: 20px;
-  }
+}
+.or-element::after {
+  right: 20px;
+}
+.or-element::before {
+  left: 20px;
 }
 
 .unitary-modal-load {
