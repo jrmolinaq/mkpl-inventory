@@ -9,10 +9,7 @@ declare const Liferay: any;
   selector: 'app-select-control',
   templateUrl: 
     Liferay.ThemeDisplay.getPathContext() + 
-    '/o/mkpl-inventory/app/select-control.component.html',
-  styleUrls: [
-		Liferay.ThemeDisplay.getPathContext() + 
-		'/o/mkpl-inventory/css/select-control.component.scss']
+    '/o/mkpl-inventory/app/select-control.component.html'
 })
 export class SelectControlComponent implements ControlValueAccessor {
   @Input() classContainer: string;

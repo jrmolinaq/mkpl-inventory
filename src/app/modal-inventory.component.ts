@@ -6,10 +6,7 @@ declare const Liferay: any;
   selector: 'modal-inventory',
   templateUrl: 
     Liferay.ThemeDisplay.getPathContext() + 
-    '/o/mkpl-inventory/app/modal-inventory.component.html',
-  styleUrls: [
-    Liferay.ThemeDisplay.getPathContext() + 
-    '/o/mkpl-inventory/css/modal-inventory.component.scss']
+    '/o/mkpl-inventory/app/modal-inventory.component.html'
 })
 export class ModalInventoryComponent {
 

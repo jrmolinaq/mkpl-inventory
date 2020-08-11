@@ -15,10 +15,7 @@ declare const Liferay: any;
   selector: 'modal',
   templateUrl: 
     Liferay.ThemeDisplay.getPathContext() + 
-    '/o/mkpl-inventory/app/modal.component.html',
-  styleUrls: [
-    Liferay.ThemeDisplay.getPathContext() + 
-    '/o/mkpl-inventory/css/modal.component.scss']
+    '/o/mkpl-inventory/app/modal.component.html'
 })
 export class ModalComponent implements OnInit, OnDestroy {
   @Input() id: string;

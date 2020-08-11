@@ -14,10 +14,7 @@ declare const Liferay: any;
   selector: 'product-list',
   templateUrl: 
     Liferay.ThemeDisplay.getPathContext() + 
-    '/o/mkpl-inventory/app/product-list.component.html',
-  styleUrls: [
-		Liferay.ThemeDisplay.getPathContext() + 
-		'/o/mkpl-inventory/css/product-list.component.scss']
+    '/o/mkpl-inventory/app/product-list.component.html'
 })
 export class ProductListComponent implements OnInit {
   @Input() subsidiaryId: number;

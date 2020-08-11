@@ -14,10 +14,7 @@ declare const Liferay: any;
   selector: 'upload-modal',
   templateUrl: 
     Liferay.ThemeDisplay.getPathContext() + 
-    '/o/mkpl-inventory/app/upload-modal.component.html',
-  styleUrls: [
-		Liferay.ThemeDisplay.getPathContext() + 
-		'/o/mkpl-inventory/css/upload-modal.component.scss']
+    '/o/mkpl-inventory/app/upload-modal.component.html'
 })
 
 export class UploadModalComponent implements OnInit {

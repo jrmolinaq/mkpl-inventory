@@ -7,10 +7,7 @@ declare const Liferay: any;
 @Component({
 	templateUrl: 
 		Liferay.ThemeDisplay.getPathContext() + 
-		'/o/mkpl-inventory/app/app.component.html',
-	styleUrls: [
-		Liferay.ThemeDisplay.getPathContext() + 
-		'/o/mkpl-inventory/css/application.scss']
+		'/o/mkpl-inventory/app/app.component.html'
 })
 export class AppComponent implements OnInit{
 	paginator: Product[];

@@ -6,10 +6,7 @@ declare const Liferay: any;
   selector: 'search',
   templateUrl: 
     Liferay.ThemeDisplay.getPathContext() + 
-    '/o/mkpl-inventory/app/search.component.html',
-  styleUrls: [
-		Liferay.ThemeDisplay.getPathContext() + 
-		'/o/mkpl-inventory/css/search.component.scss']
+    '/o/mkpl-inventory/app/search.component.html'
 })
 export class SearchComponent {
   @ViewChild('inputText', { static: false }) el: ElementRef;

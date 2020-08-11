@@ -6,10 +6,7 @@ declare const Liferay: any;
   selector: 'modal-info-block',
   templateUrl: 
     Liferay.ThemeDisplay.getPathContext() + 
-    '/o/mkpl-inventory/app/modal-info-block.component.html',
-  styleUrls: [
-    Liferay.ThemeDisplay.getPathContext() + 
-    '/o/mkpl-inventory/css/modal-info-block.component.scss']
+    '/o/mkpl-inventory/app/modal-info-block.component.html'
 })
 export class ModalInfoBlockComponent {
 

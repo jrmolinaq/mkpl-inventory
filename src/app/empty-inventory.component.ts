@@ -7,10 +7,7 @@ declare const Liferay: any;
   selector: 'empty-inventory',
   templateUrl: 
     Liferay.ThemeDisplay.getPathContext() + 
-    '/o/mkpl-inventory/app/empty-inventory.component.html',
-    styleUrls: [
-      Liferay.ThemeDisplay.getPathContext() + 
-      '/o/mkpl-inventory/css/empty-inventory.component.scss']
+    '/o/mkpl-inventory/app/empty-inventory.component.html'
 })
 export class EmptyInventoryComponent {
 

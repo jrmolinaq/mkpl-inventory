@@ -9,10 +9,7 @@ declare const Liferay: any;
   selector: 'app-input-control',
   templateUrl: 
     Liferay.ThemeDisplay.getPathContext() + 
-    '/o/mkpl-inventory/app/input-control.component.html',
-  styleUrls: [
-		Liferay.ThemeDisplay.getPathContext() + 
-		'/o/mkpl-inventory/css/input-control.component.scss']
+    '/o/mkpl-inventory/app/input-control.component.html'
 })
 export class InputControlComponent implements ControlValueAccessor, OnInit {
   @Input() classContainer: string;

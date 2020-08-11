@@ -6,10 +6,7 @@ declare const Liferay: any;
   selector: 'input-file',
   templateUrl: 
     Liferay.ThemeDisplay.getPathContext() + 
-    '/o/mkpl-inventory/app/input-file.component.html',
-  styleUrls: [
-    Liferay.ThemeDisplay.getPathContext() + 
-    '/o/mkpl-inventory/css/input-file.component.scss']
+    '/o/mkpl-inventory/app/input-file.component.html'
 })
 export class InputFileComponent {
   @Input() label: string;

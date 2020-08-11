@@ -6,10 +6,7 @@ declare const Liferay: any;
   selector: 'table-list',
   templateUrl:
     Liferay.ThemeDisplay.getPathContext() + 
-    '/o/mkpl-inventory/app/table-list.component.html',
-  styleUrls: [
-		Liferay.ThemeDisplay.getPathContext() + 
-		'/o/mkpl-inventory/css/table-list.component.scss']
+    '/o/mkpl-inventory/app/table-list.component.html'
 })
 export class TableListComponent implements OnInit {
   headers: any;
