@@ -88,6 +88,8 @@
   align-items: center;
   margin-right: 0px;
   margin-left: 0px;
+  border: none;
+  background: none;
 }
 .row.bottom {
   align-items: flex-end;
