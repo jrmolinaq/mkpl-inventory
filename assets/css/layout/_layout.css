@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
 }
+.column.start {
+  float: none;
+}
 .column.column-div {
   float: none;
 }
