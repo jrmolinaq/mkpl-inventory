@@ -16,6 +16,7 @@
 @import './modal-info-block.component.css';
 @import './modal-inventory.component.css';
 @import './modal.component.css';
+@import './paginator.component.css';
 @import './product-list.component.css';
 @import './search.component.css';
 @import './select-control.component.css';

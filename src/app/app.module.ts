@@ -11,6 +11,7 @@ import { InputFileComponent } from './input-file.component';
 import { ModalComponent } from './modal.component';
 import { ModalInfoBlockComponent } from './modal-info-block.component';
 import { ModalInventoryComponent } from './modal-inventory.component';
+import { PaginatorComponent } from './paginator.component';
 import { ProductListComponent } from './product-list.component';
 import { SearchComponent } from './search.component';
 import { SelectControlComponent } from './select-control.component';
@@ -34,6 +35,7 @@ import { ShortLargeStringsPipe } from './pipes/short-large-strings.pipe';
 		ModalComponent,
 		ModalInfoBlockComponent,
 		ModalInventoryComponent,
+		PaginatorComponent,
 		ProductListComponent,
 		SearchComponent,
 		SelectControlComponent,
