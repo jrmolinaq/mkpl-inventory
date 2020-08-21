@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { ModalService } from './services/modal.service';
 
 declare const Liferay: any;
@@ -11,9 +12,7 @@ declare const Liferay: any;
 })
 export class EmptyInventoryComponent {
 
-  constructor(
-    private modalService: ModalService
-  ) {}
+  constructor( private modalService: ModalService ) {}
 
   openModal(id: string) {
     this.modalService.open(id);

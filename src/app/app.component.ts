@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
 import { ProductService } from './services/product.service';
-import { Product } from './interfaces/product.interface';
+import { Paginator } from './interfaces/paginator.interface';
 
 declare const Liferay: any;
 
@@ -10,7 +12,7 @@ declare const Liferay: any;
 		'/o/mkpl-inventory/app/app.component.html'
 })
 export class AppComponent implements OnInit{
-	paginator: Product[];
+	$paginator: Observable<Paginator>;
 	subsidiaryId: number;
 	canUpdateInventory: boolean;
 
@@ -23,10 +25,14 @@ export class AppComponent implements OnInit{
 		// TODO: traer el subsidiaryId
 		this.subsidiaryId = 5;
   
-		this.paginator = this.productService.getProductList(this.subsidiaryId);
+		// TODO service
+		this.$paginator = this.productService.getProductList(this.subsidiaryId);
+
+		// TODO Dummy this.paginator = this.productService.getProductList2(this.subsidiaryId);
 	}
 
 	onUpload() {
-	  this.paginator = this.productService.getProductList(this.subsidiaryId);
+		// TODO service
+	  	this.$paginator = this.productService.getProductList(this.subsidiaryId);
 	}
 }

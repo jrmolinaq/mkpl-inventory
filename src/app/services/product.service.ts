@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Paginator, ListResponse } from '../interfaces/paginator.interface';
 import { Product } from '../interfaces/product.interface';
 
 @Injectable({
@@ -6,9 +10,37 @@ import { Product } from '../interfaces/product.interface';
 })
 export class ProductService {
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  getProductList(providerId: number | string, page = 0, param = ''): Product[] {
+  getProductList(
+    subsidiaryId: number | string,
+    page = 0,
+    param = ''
+  ): Observable<Paginator> {
+    const params = new HttpParams()
+      .set('param', param)
+      .set('page', page.toString());
+    return this.http
+      .get<ListResponse>(
+        `http://localhost:8080/o/ProviderCompraDigitalPortlet/api/product/subsidiary/${subsidiaryId}`,
+        {
+          params
+        }
+      )
+      .pipe(
+        map(({ content, ...dataPaginator }) => {
+          const data = content as Product[];
+          return {
+            data,
+            dataPaginator,
+            date: data.length ? data[0].registerDate : ''
+          };
+        })
+      );
+  }
+
+  /* TODO borrar Dummy
+  getProductList2(providerId: number | string, page = 0, param = ''): Product[] {
     let p1: Product = {reference: 'ABCDE123', name: 'Producto 1', stock: 10, quality: 'GENUINE', price: 100000, 
     applicability: '', irs: '', validation: '', provider: '', notification: true, registerId: '', registerDate: '', externalSubsidiaryId: '', externalDataSendId: ''};
     let p2: Product = {reference: 'ABCDE456', name: 'Producto 2', stock: 20, quality: 'GENUINE', price: 200000, 
@@ -17,5 +49,5 @@ export class ProductService {
     applicability: '', irs: '', validation: '', provider: '', notification: true, registerId: '', registerDate: '', externalSubsidiaryId: '', externalDataSendId: ''};
 
     return  Math.random() >= 0.5? [p1, p2, p3]: [];
-  }
+  }*/
 }

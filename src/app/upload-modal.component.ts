@@ -55,14 +55,13 @@ export class UploadModalComponent implements OnInit {
     }
 
     this.changeModal(this.steps.LOADING);
-    let flag: boolean = this.uploadFileService.uploadFile(file, fileExtension, this.subsidiaryId);
-    
-    if (flag) {
-      this.uploadSuccess();
-    } else {
-        this.modalError = "Ocurrió un error";
+    this.uploadFileService.uploadFile(file, fileExtension, this.subsidiaryId).subscribe({
+      next: () => this.uploadSuccess(),
+      error: (error: string) => {
+        this.modalError = error;
         this.changeModal(this.steps.ERROR);
-    }
+      }
+    });
   }
 
   openModal(id: string) {
@@ -99,16 +98,17 @@ export class UploadModalComponent implements OnInit {
       quality: this.form.get('productInfo').value.quality
     };
 
-    let flag: boolean = this.uploadFileService.uploadUnitaryProduct(body);
-
-    if (flag) {
-      this.changeModal(this.steps.SUCCESS_INDIVIDUAL);
-      this.uploaded.emit();
-      this.form.reset();
-    } else {
-      this.modalError = 'El producto no pudo ser cargado';
-      this.changeModal(this.steps.ERROR);
-      this.form.reset();
-    }
+    this.uploadFileService.uploadUnitaryProduct(body).subscribe({
+      next: () => {
+        this.changeModal(this.steps.SUCCESS_INDIVIDUAL);
+        this.uploaded.emit();
+        this.form.reset();
+      },
+      error: () => {
+        this.modalError = 'El producto no pudo ser cargado';
+        this.changeModal(this.steps.ERROR);
+        this.form.reset();
+      }
+    });
   }
 }

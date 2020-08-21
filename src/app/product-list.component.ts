@@ -33,7 +33,7 @@ export class ProductListComponent implements OnInit {
       style: 'bold'
     }
   };
-  @Input() paginator: Product[];
+  @Input() paginator: Paginator;
 
   constructor(
     private productService: ProductService,
@@ -42,11 +42,11 @@ export class ProductListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.products = this.paginator;
-    //this.dataToPaginate = this.paginator.dataPaginator;
-    this.inventoryDate = '2020-07-31';
+    this.products = this.paginator.data as Product[];
+    this.dataToPaginate = this.paginator.dataPaginator;
+    this.inventoryDate = this.paginator.date;
 
-    // TODO: permisos de sesión y arreglar paginator e inventoryDate
+    // TODO: permisos de sesión
     this.canUpdateInventory = true;
     this.canReadInventory = true;
   }
@@ -55,8 +55,8 @@ export class ProductListComponent implements OnInit {
     this.modalService.open(id);
   }
 
-  currentPageChange($event: any) {
-    /*
+  currentPageChange(page: number) { // TODO cambiado  $event: any) {
+    /* TODO se cambió, comprobar si funciona el paginador
     this.router
       .navigate([], {
         queryParams: {
@@ -66,28 +66,36 @@ export class ProductListComponent implements OnInit {
       })
       .then(() => {
         this.getProductList();
-      });
-    */
+      });*/
+
+    this.getProductList(page);
   }
 
-  searchItem($event: any) {
-    /*
+  searchItem(param: string) { // TODO cambiado     $event: any) {
+    /* TODO cambiado
     this.router.navigate([], { queryParams: { param: $event } }).then(() => {
       this.getProductList();
     });
     */
+   
+   this.getProductList(0, param);
   }
 
-  getProductList() {
-    /*const {
+  getProductList(page = 0, param = '') {
+    /* TODO cambiado    const {
       page = 0,
       param = ''
     } = this.activeRoute.snapshot.parent.queryParams;*/
     
+    // TODO service nuevo llamado
+    this.productService.getProductList(this.subsidiaryId, page, param)
+      .subscribe(({ data, dataPaginator, date }) => {
+        this.products = data as Product[];
+        this.dataToPaginate = dataPaginator;
+        this.inventoryDate = date;
+      });
 
-    this.products = this.productService.getProductList(this.subsidiaryId, 0, '');
-    //this.dataToPaginate = dataPaginator;
-    this.inventoryDate = '2020-07-31';
-    
+    /* TODO Dummy   this.products = this.productService.getProductList2(this.subsidiaryId, 0, '');
+    this.inventoryDate = '2020-07-31';*/
   }
 }
