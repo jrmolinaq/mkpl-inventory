@@ -2,8 +2,8 @@
   background-color: #FFF;
   border-radius: 8px;
   box-shadow: 0 18px 56px -12px rgba(0, 51, 160, 0.169);
-  height: 61px;
-  padding: 16px 17px;
+  /*height: 61px;*/
+  padding: 12px 13px;
   width: 468px;
 }
 
@@ -25,4 +25,13 @@
 
 .error-modal {
   border: 1px solid #E24D56;
+}
+
+p.field-text {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+div.row-no-wrap {
+  flex-wrap: nowrap;
 }

@@ -1,6 +1,10 @@
+<!-- TODO se quita asincrono
+<div *ngIf="$paginator | async as paginator"> -->
 <div *ngIf="$paginator | async as paginator">
 	
-	<empty-inventory *ngIf="!paginator.data.length; else list"></empty-inventory>
+	<!-- TODO se quita data
+	<empty-inventory *ngIf="!paginator.data.length; else list"></empty-inventory>-->
+	<empty-inventory *ngIf="!paginator.length; else list"></empty-inventory>
 	
 	<ng-template #list>
 	  <h1 class="inventory-title poppins deep-sea-green bold text-normal m-bottom-10">Inventario</h1>

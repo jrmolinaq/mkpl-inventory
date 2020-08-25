@@ -17,8 +17,9 @@ export class UploadFileService {
       .pipe(
         catchError(this.handleError),
         switchMap((response: any) => {
-          fileUrl = response.fileUrl.split('/')[3];
-          return this.http.put(response.url, file); // TODO revisar este endpoint
+          fileUrl = response.fileURL.split('/')[3];
+          let a = this.http.put(response.url, file);
+          return a;
         }),
         catchError(this.handleError),
         switchMap(() => {
@@ -30,7 +31,7 @@ export class UploadFileService {
         catchError(this.handleError),
         switchMap((response: any) => {
           if (!response.success) {
-            return this.handleError();
+            return this.handleError(response.message);
           }
           return of(true);
         })
@@ -43,13 +44,17 @@ export class UploadFileService {
     return true;
   }*/
 
-  private handleError() {
-    return throwError('Sucedió un error inesperado al subir el archivo');
+  private handleError(message = '') {
+    if(message == ''){
+      message = 'Sucedió un error inesperado al subir el archivo';
+    }
+
+    return throwError(message);
   }
 
   // TODO Service
   uploadUnitaryProduct(body: any) {
-    return this.http.post(`${environment.BACK_ENDPOINT}/irs_single_upload`, body);
+    return this.http.post(`rutaEndpoint/irs_single_upload`, body);
   }
 
   /* TODO Borrar Dummy

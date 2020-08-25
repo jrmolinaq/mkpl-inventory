@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="31px" viewBox="0 0 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 63.1 (101010) - https://sketch.com -->
+    <title>59867D20-5186-49F7-95DB-5F1EE1A6C7E6</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="16.32" height="16.8"></rect>
+    </defs>
+    <g id="[UI]PROVEEDOR-/-CARGAR-INVENTARIO" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="02_B[Inventario]Cargar-archivo" transform="translate(-490.000000, -461.000000)">
+            <g id="Group-6" transform="translate(472.000000, 445.000000)">
+                <g id="Group" transform="translate(17.000000, 14.000000)">
+                    <circle id="Oval" stroke="#0D4D64" stroke-width="4" cx="16.96" cy="17.56" r="12.96"></circle>
+                    <g id="Oval" transform="translate(8.500000, 9.100000) scale(-1, 1) rotate(-90.000000) translate(-8.500000, -9.100000) translate(0.000000, 0.600000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Mask"></g>
+                        <circle stroke="#F5F6FB" stroke-width="5" stroke-linejoin="bevel" mask="url(#mask-2)" transform="translate(0.000000, 0.000000) rotate(-180.000000) translate(-0.000000, -0.000000) " cx="2.50466314e-13" cy="7.60280727e-13" r="12.96"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

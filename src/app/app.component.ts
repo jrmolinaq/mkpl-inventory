@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 
 import { ProductService } from './services/product.service';
 import { Paginator } from './interfaces/paginator.interface';
+import { Product } from './interfaces/product.interface';
 
 declare const Liferay: any;
 
@@ -12,7 +13,8 @@ declare const Liferay: any;
 		'/o/mkpl-inventory/app/app.component.html'
 })
 export class AppComponent implements OnInit{
-	$paginator: Observable<Paginator>;
+	// TODO se quita paginador   $paginator: Observable<Paginator>;
+	$paginator: Observable<any>;
 	subsidiaryId: number;
 	canUpdateInventory: boolean;
 
@@ -26,13 +28,15 @@ export class AppComponent implements OnInit{
 		this.subsidiaryId = 5;
   
 		// TODO service
-		this.$paginator = this.productService.getProductList(this.subsidiaryId);
+		//this.$paginator = this.productService.getProductList(this.subsidiaryId);
+		this.$paginator = this.productService.getProductList3(this.subsidiaryId);
 
 		// TODO Dummy this.paginator = this.productService.getProductList2(this.subsidiaryId);
 	}
 
 	onUpload() {
 		// TODO service
-	  	this.$paginator = this.productService.getProductList(this.subsidiaryId);
+		// this.$paginator = this.productService.getProductList(this.subsidiaryId);
+		this.$paginator = this.productService.getProductList3(this.subsidiaryId);
 	}
 }

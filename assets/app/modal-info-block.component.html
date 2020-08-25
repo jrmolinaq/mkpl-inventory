@@ -1,18 +1,12 @@
-<div
-  class="row middle message-container m-top-6"
-  [ngClass]="{ 'error-modal': error }"
->
+<div class="row middle message-container row-no-wrap" [ngClass]="{ 'error-modal': error }">
   <img
     [ngClass]="{ 'loading-icon': icon === 'loading' }"
     class="message-icon"
     src="/o/mkpl-inventory/icons/{{ icon }}.svg"
     alt="{{ icon }}"
   />
-  <p
-    class="field-text text-error text-error m-left-6"
-    *ngIf="error; else success"
-  >
-    ¡Error! {{ error }}
+  <p class="field-text text-error m-left-6" *ngIf="error; else success">
+    {{ error }}
   </p>
   <ng-template #success>
     <p class="field-text deep-sea-green m-left-6">

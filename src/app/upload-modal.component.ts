@@ -50,7 +50,7 @@ export class UploadModalComponent implements OnInit {
     }
 
     if (file.size > MAX_FILE_SIZE) {
-      this.modalError = 'El archivo sobre pasa el peso máximo.';
+      this.modalError = 'El archivo sobrepasa el peso máximo de 6 MB.';
       return this.changeModal(this.steps.ERROR);
     }
 
