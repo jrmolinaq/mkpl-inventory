@@ -1,6 +1,7 @@
 import { Validators } from '@angular/forms';
 
-export const MAX_FILE_SIZE = 6000000;
+// 6291456 es = 6 * 1024 * 1024
+export const MAX_FILE_SIZE = 6291456;
 
 export const STEPS = {
   SELECT_FILE: '1',

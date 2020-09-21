@@ -2,7 +2,7 @@
 
 @import './variables/_sizes.css';
 
-@import './layout/_layout.css';
+@import './layout/_layout2.css';
 @import './layout/_margins.css';
 
 @import './commons/_fonts.css';
@@ -87,4 +87,8 @@ a.link-simple, a.link-simple:hover {
 a.link-simple.deep-sea-green, a.link-simple.deep-sea-green:hover {
   text-decoration:none;
   color: #0D4D64;
+}
+
+div.column2.no-float {
+  float: none;
 }

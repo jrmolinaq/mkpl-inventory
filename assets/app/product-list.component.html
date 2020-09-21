@@ -1,4 +1,4 @@
-<div class="column column-div m-bottom-9">
+<div class="column2 column-div m-bottom-9">
   <h2 class="inventory-subtitle m-bottom-5 poppins bold">Catálogo de inventario</h2>
   <p class="deep-sea-green text-big">Última actualización <span
       class="deep-sea-green text-big bold">{{inventoryDate | date: 'dd/MM/yyyy'}}</span></p>
@@ -7,7 +7,7 @@
   <search (item)="searchItem($event)"></search>
   <table-list [modifiers]="modifiers" [data]="products" [configTable]="configTable"></table-list>
 </div>
-<div class="row space-between m-top-9">
+<div class="row2 space-between m-top-9">
 
   <!-- TODO paginador
   <paginator [paginator]="dataToPaginate" (page)="currentPageChange($event)"></paginator>

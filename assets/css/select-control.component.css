@@ -2,8 +2,8 @@
   position: relative;
 }
 
-.input-select-container.column {
-  float: none;
+.input-select-container.column2 {
+  float: none !important;
 }
 
 .input-select {
@@ -23,7 +23,7 @@
 .input-select:focus {
   outline: none;
 }
-.input-select:focus ~ .label {
+.input-select:focus ~ .label-select {
   color: #0D4D64;
   font-size: 12px;
   top: -12px;
@@ -35,7 +35,7 @@
   background-size: 20px;
   border: 2px solid #0D4D64;
 }
-.input-select.valid ~ .label {
+.input-select.valid ~ .label-select {
   color: #1A1A1A;
   font-size: 12px;
   top: -12px;
@@ -43,7 +43,7 @@
 .input-select.error {
   border-color: #E24D56;
 }
-.input-select.error ~ .label {
+.input-select.error ~ .label-select {
   color: #E24D56;
   font-size: 12px;
   top: -12px;
@@ -52,11 +52,11 @@
   border-color: rgba(0, 0, 0, 0.32);
   color: rgba(0, 0, 0, 0.32);
 }
-.input-select.disabled ~ .label, .input:disabled ~ .label {
+.input-select.disabled ~ .label-select, .input:disabled ~ .label-select {
   color: rgba(0, 0, 0, 0.32);
 }
 
-.label {
+.label-select {
   background-color: #FFF;
   color: #979797;
   font-size: 16px;

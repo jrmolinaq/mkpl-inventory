@@ -2,8 +2,8 @@
   position: relative;
 }
 
-.input-text-container.column {
-  float: none;
+.input-text-container.column2 {
+  float: none !important;
 }
 
 .input-text {
@@ -22,12 +22,12 @@
 .input-text:focus {
   outline: none;
 }
-.input-text.valid ~ .label {
+.input-text.valid ~ .label-input {
   color: #1A1A1A;
   font-size: 12px;
   top: -12px;
 }
-.input-text:focus ~ .label {
+.input-text:focus ~ .label-input {
   color: #0D4D64;
   font-size: 12px;
   top: -12px;
@@ -38,7 +38,7 @@
 .input-text.error {
   border-color: #E24D56;
 }
-.input-text.error ~ .label {
+.input-text.error ~ .label-input {
   color: #E24D56;
   font-size: 12px;
   top: -12px;
@@ -48,11 +48,11 @@
   color: rgba(0, 0, 0, 0.32);
   cursor: not-allowed;
 }
-.input-text.disabled ~ .label, .input:disabled ~ .label {
+.input-text.disabled ~ .label-input, .input:disabled ~ .label-input {
   color: rgba(0, 0, 0, 0.32);
 }
 
-.label {
+.label-input {
   background-color: #FFF;
   color: #979797;
   font-size: 16px;

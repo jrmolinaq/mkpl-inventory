@@ -1,8 +1,8 @@
 <modal class="modal-hidden" id="cv-modal" [ngSwitch]="currentModalStep" (closeModal)="closeProductUpload()" [applyPadding]="false">
-  <div *ngSwitchDefault class="row center modal-choose-option">
-    <div class="modal-info row middle center">
-      <div class="column middle">
-        <img class="modal-icon column" src="/o/mkpl-inventory/icons/upload-inventory.svg" alt="Cargar inventario" />
+  <div *ngSwitchDefault class="row2 center modal-choose-option">
+    <div class="modal-info row2 middle center">
+      <div class="column2 middle">
+        <img class="modal-icon column2" src="/o/mkpl-inventory/icons/upload-inventory.svg" alt="Cargar inventario" />
         <h2 class="title section m-top-8">Agregar o editar productos</h2>
         <p class="field-text m-top-3 modal-text">
           Puedes agregar o editar productos de tu inventario o realizar una
@@ -12,7 +12,7 @@
     </div>
     <div class="modal-options-container">
       <div></div>
-      <div class="column center middle">
+      <div class="column2 center middle">
         <button class="button-primary button-width m-bottom-12" (click)="changeModal('1')" type="button">
           Carga masiva
         </button>
@@ -70,7 +70,7 @@
   </modal-inventory>
 
   <form [formGroup]="form" *ngSwitchCase="steps.UNIT_LOAD" (ngSubmit)="uploadProduct()">
-    <div class="column unitary-modal-load" formGroupName="productInfo">
+    <div class="column2 unitary-modal-load" formGroupName="productInfo">
       <span class="title-medium self-center bold deep-sea-green m-bottom-4">Carga de inventario individual</span>
       <span class="text-big deep-sea-green self-center m-bottom-12">Ingresa los datos solicitados a continuación</span>
       <app-input-control formControlName="reference" label="Referencia" id="reference" class="m-bottom-5">
@@ -84,7 +84,7 @@
       <app-select-control [data]="qualityTypes" formControlName="quality" label="Calidad" id="quality"
         class="m-bottom-5">
       </app-select-control>
-      <div class="row width-100 end">
+      <div class="row2 width-100 end">
         <button type="button" class="button-secondary button-width m-right-4" (click)="closeProductUpload()">
           Cancelar
         </button>

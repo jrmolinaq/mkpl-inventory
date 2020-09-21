@@ -98,6 +98,7 @@ export class UploadModalComponent implements OnInit {
       quality: this.form.get('productInfo').value.quality
     };
 
+    /* TODO se comenta llamado a irs
     this.uploadFileService.uploadUnitaryProduct(body).subscribe({
       next: () => {
         this.changeModal(this.steps.SUCCESS_INDIVIDUAL);
@@ -109,6 +110,10 @@ export class UploadModalComponent implements OnInit {
         this.changeModal(this.steps.ERROR);
         this.form.reset();
       }
-    });
+    });*/
+    
+    this.changeModal(this.steps.SUCCESS_INDIVIDUAL);
+    this.uploaded.emit();
+    this.form.reset();
   }
 }

@@ -12,7 +12,8 @@ export class UploadFileService {
     let fileUrl: any;
     return this.http
       .get(
-        `http://localhost:8080/o/ProviderCompraDigitalPortlet/api/catalogue/presigneds3?format=.${extension}`
+        //`http://localhost:8080/o/ProviderCompraDigitalPortlet/api/catalogue/presigneds3?format=.${extension}`
+        `https://liferaydev.subocol.com/o/ProviderCompraDigitalPortlet/api/catalogue/presigneds3?format=.${extension}`
       )
       .pipe(
         catchError(this.handleError),
@@ -23,7 +24,8 @@ export class UploadFileService {
         }),
         catchError(this.handleError),
         switchMap(() => {
-          return this.http.post(`http://localhost:8080/o/SendFileMKPLPortlet/sendfile/inventory`, {
+          //return this.http.post(`http://localhost:8080/o/SendFileMKPLPortlet/sendfile/inventory`, {
+          return this.http.post(`https://liferaydev.subocol.com/o/SendFileMKPLPortlet/sendfile/inventory`, {
             url: fileUrl,
             id_subsidiary: subsidiaryId
           });

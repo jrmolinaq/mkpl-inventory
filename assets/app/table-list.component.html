@@ -1,4 +1,4 @@
-<div class="table-header row">
+<div class="table-header row2">
   <h3 class="header-title deep-sea-green bold title-small-poppins item-1"
     *ngFor="let header of headers">
     {{ header }}
@@ -6,7 +6,7 @@
 </div>
 <ng-content></ng-content>
 <ng-container *ngIf="$data">
-  <div class="product-info row" *ngFor="let item of $data">
+  <div class="product-info row2" *ngFor="let item of $data">
     <ng-container *ngFor="let key of keys">
       <ng-container *ngIf="modifiers[key]?.resolver">
         <span class="table-item deep-sea-green text-normal item-1">
