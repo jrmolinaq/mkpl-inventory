@@ -7,13 +7,11 @@ import { switchMap, catchError } from 'rxjs/operators';
 export class UploadFileService {
   constructor(private http: HttpClient) { }
 
-  // TODO Service
   uploadFile(file: File, extension: string, subsidiaryId: number): Observable<any> {
     let fileUrl: any;
     return this.http
       .get(
-        //`http://localhost:8080/o/ProviderCompraDigitalPortlet/api/catalogue/presigneds3?format=.${extension}`
-        `https://liferaydev.subocol.com/o/ProviderCompraDigitalPortlet/api/catalogue/presigneds3?format=.${extension}`
+        `http://localhost:8080/o/ProviderCompraDigitalPortlet/api/catalogue/presigneds3?format=.${extension}`
       )
       .pipe(
         catchError(this.handleError),
@@ -24,8 +22,7 @@ export class UploadFileService {
         }),
         catchError(this.handleError),
         switchMap(() => {
-          //return this.http.post(`http://localhost:8080/o/SendFileMKPLPortlet/sendfile/inventory`, {
-          return this.http.post(`https://liferaydev.subocol.com/o/SendFileMKPLPortlet/sendfile/inventory`, {
+          return this.http.post(`http://localhost:8080/o/SendFileMKPLPortlet/sendfile/inventory`, {
             url: fileUrl,
             id_subsidiary: subsidiaryId
           });
@@ -40,12 +37,6 @@ export class UploadFileService {
       );
   }
 
-  /* TODO borrar Dummy
-  uploadFile2(file: File, extension: string, subsidiaryId: number): any {
-    let fileUrl: any;
-    return true;
-  }*/
-
   private handleError(message = '') {
     if(message == ''){
       message = 'Sucedió un error inesperado al subir el archivo';
@@ -56,11 +47,6 @@ export class UploadFileService {
 
   // TODO Service
   uploadUnitaryProduct(body: any) {
-    return this.http.post(`rutaEndpoint/irs_single_upload`, body);
+    return this.http.post(`https://4vt3v6gcpc.execute-api.us-east-1.amazonaws.com/qa/single-inventory`, body);
   }
-
-  /* TODO Borrar Dummy
-  uploadUnitaryProduct(body: any) {
-    return true;
-  }*/
 }

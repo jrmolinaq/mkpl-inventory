@@ -96,6 +96,7 @@ export class UploadModalComponent implements OnInit {
       price: this.form.get('productInfo').value.unitPrice,
       stock: this.form.get('productInfo').value.quantity,
       quality: this.form.get('productInfo').value.quality
+      // TODO pendiente para llamar al IRS enviar dos campos más: id y external_subsidiary_id
     };
 
     /* TODO se comenta llamado a irs

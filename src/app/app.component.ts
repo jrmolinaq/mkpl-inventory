@@ -28,15 +28,13 @@ export class AppComponent implements OnInit{
 		this.subsidiaryId = 5;
   
 		// TODO service
-		//this.$paginator = this.productService.getProductList(this.subsidiaryId);
-		this.$paginator = this.productService.getProductList3(this.subsidiaryId);
-
-		// TODO Dummy this.paginator = this.productService.getProductList2(this.subsidiaryId);
+		this.$paginator = this.productService.getProductList(this.subsidiaryId);
+		//this.$paginator = this.productService.getProductList3(this.subsidiaryId);
 	}
 
 	onUpload() {
 		// TODO service
-		// this.$paginator = this.productService.getProductList(this.subsidiaryId);
-		this.$paginator = this.productService.getProductList3(this.subsidiaryId);
+		 this.$paginator = this.productService.getProductList(this.subsidiaryId);
+		//this.$paginator = this.productService.getProductList3(this.subsidiaryId);
 	}
 }
