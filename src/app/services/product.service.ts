@@ -35,7 +35,7 @@ export class ProductService {
 
     return this.http
       .get<ListResponse>(
-        `http://localhost:8080/o/ProviderCompraDigitalPortlet/api/product/subsidiary/${subsidiaryId}`,
+        `/o/ProviderCompraDigitalPortlet/api/product/subsidiary/${subsidiaryId}`,
         {
           params
         }
@@ -55,10 +55,10 @@ export class ProductService {
   /*getProductList3( subsidiaryId: number | string, param = '' ): Observable<any> {
     if(param == ''){
       return this.http.get<any>(
-        `http://localhost:8080/o/ProviderCompraDigitalPortlet/api/product/subsidiary/${subsidiaryId}`, {} );
+        `/o/ProviderCompraDigitalPortlet/api/product/subsidiary/${subsidiaryId}`, {} );
     } else {
       return this.http.get<any>(
-        `http://localhost:8080/o/ProviderCompraDigitalPortlet/api/product/subsidiary/${subsidiaryId}?reference=${param}&name=${param}`, {} );
+        `/o/ProviderCompraDigitalPortlet/api/product/subsidiary/${subsidiaryId}?reference=${param}&name=${param}`, {} );
     }
   }*/
 }
